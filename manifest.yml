@@ -3,4 +3,8 @@ applications:
 - name: vanilla-prototype-kit
   command: node start.js
   memory: 256M
+  instances: 1
   buildpack: nodejs_buildpack
+  env:
+    USERNAME: prototype
+    PASSWORD: kit

@@ -13,11 +13,15 @@ after_success:
 after_deploy:
 - "./update-release-branch.sh"
 deploy:
-  provider: heroku
-  api_key:
-    secure: h/9/Rcd41XVU4VYYeBoKKvG6uShEoDksCGGZ/2dgeY1f3tYnhGzzgL6TIkvhafwDbKk2Y4o6d/MI05K+s7lorf2uTKpr1To2o52hQqmb4YREPWruZtBqoRo5X4nCeN2oEdW+yJRH3jZDNUmwkPzjytqxkcUUUeDPHfz3+xCtSZk=
-  app: govuk-prototype-kit
-  on: master
+  provider: cloudfoundry
+  api: https://api.cloud.service.gov.uk
+  username: tom.dolan@digital.cabinet-office.gov.uk
+  password:
+    secure: EThCGWKOtwSGMOhq+3Llw1DnGDNjwIqHVz6WrUTt40CA/SdvJwH9Vv+9j1KgaI+ZVcx1yYVlKfyBYZj8ttzcw4xOsCrBNNp/C9U7vCCzuok5tG4MhHSr6t4GFhoJB6TvhTV0RJjZVmaJPAaHZP+UyNzGAYRYjmqsDcaY8wbdMQ5eJQnNmAt1uXv9dR61sPOq5QD/LKDH/YC0lOM8xGow9/3g1VbFxH0vRHgHHciRnBCbOVV5g/NkzJ1GFQjEm3FG/xDMyJjgHxZGVR+hyZg/BfYBXqbEPvHmnNT+FvBEHUXbfAYfnp70Ar0J7PxFh10SDiOUe/2CsjsJKoblIuXJfR8wdSIKdGVjZRYcf7cpiLnkRv0ll8sYitH48nTl27gouvqTxFhIO0MUuZ9dIVDmnx1pxLfPbqPcRK36cTxNCHxrTatYlalnZis+aOS/2ZPqwC5Qafs+f2UFD7woUia/G8x6d0bvS8LPX6SpoNWyxFXFD2NxLH3AcEKmPabf2igD8VTMVV8QvbPxx5s9C0GEPBEXuS4Bv07eMiUQWWwbA79U9G6jFY8uV2xtIAtIci9rM/juAn/izEavrJI9pWvV0n7Brqz1RjZHnPdPY8T5LrcJwfPDBekdtzU0J116i+TTKi1A4Y4rwyAMpqbQo8PVIOeKctmXGtwe9vujMiDknhU=
+  organization: paas-demo
+  space: sandbox
+  on:
+    repo: tomskerous/prototype_kit_test
 notifications:
   email: false
 sudo: false
